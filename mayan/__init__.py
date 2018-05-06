@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-__title__ = 'Mayan EDMS'
+__title__ = 'IITH DVC'
 __version__ = '2.7.2'
 __build__ = 0x020702
 __author__ = 'Roberto Rosario'

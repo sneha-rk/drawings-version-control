@@ -125,7 +125,7 @@ class CheckoutsApp(MayanAppConfig):
         dashboard_main.add_widget(order=-1, widget=widget_checkouts)
 
         menu_facet.bind_links(links=(link_checkout_info,), sources=(Document,))
-        menu_main.bind_links(links=(link_checkout_list,), position=98)
+        #menu_main.bind_links(links=(link_checkout_list,), position=98)
         menu_sidebar.bind_links(
             links=(link_checkout_document, link_checkin_document),
             sources=(
