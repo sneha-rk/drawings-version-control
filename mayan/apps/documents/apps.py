@@ -381,17 +381,14 @@ class DocumentsApp(MayanAppConfig):
         dashboard_main.add_widget(widget=widget_document_types)
         dashboard_main.add_widget(widget=widget_documents_in_trash)
         dashboard_main.add_widget(widget=widget_new_documents_this_month)
-        dashboard_main.add_widget(widget=widget_pages_per_month)
+        #dashboard_main.add_widget(widget=widget_pages_per_month)
         dashboard_main.add_widget(widget=widget_total_documents)
 
-        menu_documents.bind_links(
-            links=(
-                link_document_list_recent, link_document_list,
-                link_document_list_deleted, link_duplicated_document_list
-            )
-        )
+        menu_main.bind_links(links=(link_document_list_recent,), position=2)
+        menu_main.bind_links(links=(link_document_list,), position=1)
+        menu_main.bind_links(links=(link_document_list_deleted,), position=3)
 
-        menu_main.bind_links(links=(menu_documents,), position=0)
+
 
         menu_setup.bind_links(links=(link_document_type_setup,))
         menu_tools.bind_links(
