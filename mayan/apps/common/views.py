@@ -292,6 +292,7 @@ class ToolsListView(SimpleView):
     def get_menu_links(self):
         context = RequestContext(self.request)
         context['request'] = self.request
+        # context = self.request
 
         return menu_tools.resolve(context=context)
 
