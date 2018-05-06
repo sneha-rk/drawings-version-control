@@ -176,33 +176,6 @@ class DocumentIndexingApp(MayanAppConfig):
             }
         )
 
-        menu_facet.bind_links(
-            links=(link_document_index_list,), sources=(Document,)
-        )
-        menu_object.bind_links(
-            links=(
-                link_index_setup_edit, link_index_setup_view,
-                link_index_setup_document_types, link_acl_list,
-                link_index_setup_delete
-            ), sources=(Index,)
-        )
-        menu_object.bind_links(
-            links=(
-                link_template_node_create, link_template_node_edit,
-                link_template_node_delete
-            ), sources=(IndexTemplateNode,)
-        )
-        menu_main.bind_links(links=(link_index_main_menu,), position=98)
-        menu_secondary.bind_links(
-            links=(link_index_setup_list, link_index_setup_create),
-            sources=(
-                Index, 'indexing:index_setup_list',
-                'indexing:index_setup_create'
-            )
-        )
-        menu_setup.bind_links(links=(link_index_setup,))
-        menu_tools.bind_links(links=(link_rebuild_index_instances,))
-
         post_delete.connect(
             handler_delete_empty, dispatch_uid='handler_delete_empty',
             sender=Document

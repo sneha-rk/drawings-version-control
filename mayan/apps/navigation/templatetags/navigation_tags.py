@@ -30,6 +30,7 @@ def get_multi_item_links_form(context, object_list):
     actions = []
     for link_set in Menu.get('multi item menu').resolve(context=context, source=object_list[0]):
         for link in link_set:
+            print link
             actions.append((link.url, link.text))
 
     form = MultiItemForm(actions=actions)

@@ -123,48 +123,6 @@ class OCRApp(MayanAppConfig):
             }
         )
 
-        document_search.add_model_field(
-            field='versions__pages__ocr_content__content', label=_('OCR')
-        )
-
-        document_page_search.add_model_field(
-            field='ocr_content__content', label=_('OCR')
-        )
-
-        menu_facet.bind_links(
-            links=(link_document_content,), sources=(Document,)
-        )
-        menu_multi_item.bind_links(
-            links=(link_document_submit_multiple,), sources=(Document,)
-        )
-        menu_object.bind_links(
-            links=(link_document_submit,), sources=(Document,)
-        )
-        menu_object.bind_links(
-            links=(link_document_type_ocr_settings,), sources=(DocumentType,)
-        )
-        menu_secondary.bind_links(
-            links=(
-                link_document_content, link_document_ocr_erros_list,
-                link_document_ocr_download
-            ),
-            sources=(
-                'ocr:document_content', 'ocr:document_ocr_error_list',
-                'ocr:document_ocr_download',
-            )
-        )
-        menu_secondary.bind_links(
-            links=(link_entry_list,),
-            sources=(
-                'ocr:entry_list', 'ocr:entry_delete_multiple',
-                'ocr:entry_re_queue_multiple', DocumentVersionOCRError
-            )
-        )
-        menu_tools.bind_links(
-            links=(
-                link_document_type_submit, link_entry_list
-            )
-        )
 
         post_save.connect(
             dispatch_uid='ocr_handler_initialize_new_ocr_settings',
