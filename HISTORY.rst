@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2.7.3 (2017-09-11)
 ==================
 - Fix task manager queue list view. Thanks to LeVon Smoker for
@@ -5,6 +6,12 @@
 - Fix resolved link class URL mangling when the keep_query argument is
   used. Thanks to Nick Douma (LordGaav) for the report and diagnostic
   information. Fixes source navigation on the document upload wizard.
+=======
+3.0 (2017-XX-XX)
+================
+- Add support for notifications. GitLab #262.
+- Add quota support. GitLab #284.
+>>>>>>> 4cedd41ab6b9750abaebc35d1970556408d83cf5
 
 2.7.2 (2017-09-06)
 ==================
