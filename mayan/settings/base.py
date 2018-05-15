@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'secret_key_missing'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -89,9 +89,6 @@ INSTALLED_APPS = (
     'document_states',
     'documents',
     'events',
-    # Disable the folders app by default
-    # Will be removed in the next version
-    # 'folders',
     'linking',
     'mailer',
     'mayan_statistics',
@@ -99,6 +96,7 @@ INSTALLED_APPS = (
     'mirroring',
     'motd',
     'ocr',
+    'quotas',
     'rest_api',
     'sources',
     'storage',

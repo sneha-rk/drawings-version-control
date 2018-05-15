@@ -11,10 +11,15 @@ from django.utils.translation import ugettext_lazy as _
 from acls import ModelPermission
 from common import MayanAppConfig, menu_facet, menu_main, menu_sidebar
 from common.dashboards import dashboard_main
+from events import ModelEventType
 from mayan.celery import app
 from rest_api.classes import APIEndPoint
 
 from .dashboard_widgets import widget_checkouts
+from .events import (
+    event_document_auto_check_in, event_document_check_in,
+    event_document_check_out, event_document_forceful_check_in
+)
 from .handlers import check_new_version_creation
 from .links import (
     link_checkin_document, link_checkout_document, link_checkout_info,
@@ -51,7 +56,10 @@ class CheckoutsApp(MayanAppConfig):
 
         Document.add_to_class(
             'check_in',
-            lambda document, user=None: DocumentCheckout.objects.check_in_document(document, user)
+            lambda document,
+            user=None: DocumentCheckout.objects.check_in_document(
+                document, user
+            )
         )
         Document.add_to_class(
             'checkout_info',
@@ -69,6 +77,13 @@ class CheckoutsApp(MayanAppConfig):
             'is_checked_out',
             lambda document: DocumentCheckout.objects.is_document_checked_out(
                 document
+            )
+        )
+
+        ModelEventType.register(
+            model=Document, event_types=(
+                event_document_auto_check_in, event_document_check_in,
+                event_document_check_out, event_document_forceful_check_in
             )
         )
 
@@ -107,10 +122,10 @@ class CheckoutsApp(MayanAppConfig):
             }
         )
 
-        dashboard_main.add_widget(order=-1, widget=widget_checkouts)
+        #dashboard_main.add_widget(order=-1, widget=widget_checkouts)
 
         menu_facet.bind_links(links=(link_checkout_info,), sources=(Document,))
-        menu_main.bind_links(links=(link_checkout_list,), position=98)
+        #menu_main.bind_links(links=(link_checkout_list,), position=98)
         menu_sidebar.bind_links(
             links=(link_checkout_document, link_checkin_document),
             sources=(

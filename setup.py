@@ -65,7 +65,7 @@ django-activity-stream==0.6.3
 django-autoadmin==1.1.1
 django-celery==3.2.1
 django-colorful==1.2
-django-compressor==2.1
+django-compressor==2.1.1
 django-cors-headers==1.2.2
 django-downloadview==1.9
 django-formtools==2.0
@@ -86,13 +86,13 @@ graphviz==0.8
 mock==2.0.0
 pycountry==1.20
 PyPDF2==1.26.0
-pyocr==0.4.5
+pyocr==0.4.7
 python-dateutil==2.5.3
 python-gnupg==0.3.9
 python-magic==0.4.13
 pytz==2016.7
-requests==2.18.4 
-sh==1.12.11
+requests==2.18.4
+sh==1.12.13
 """.split()
 
 with open('README.rst') as f:

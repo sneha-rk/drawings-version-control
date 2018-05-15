@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from django.utils.html import format_html_join
 
 from django.utils.html import format_html_join
 

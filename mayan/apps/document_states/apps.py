@@ -254,7 +254,7 @@ class DocumentStatesApp(MayanAppConfig):
         menu_facet.bind_links(
             links=(link_document_workflow_instance_list,), sources=(Document,)
         )
-        menu_main.bind_links(links=(link_workflow_list,), position=10)
+        #menu_main.bind_links(links=(link_workflow_list,), position=10)
         menu_object.bind_links(
             links=(
                 link_setup_workflow_states, link_setup_workflow_transitions,
