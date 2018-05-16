@@ -360,17 +360,14 @@ class DocumentsApp(MayanAppConfig):
 
         menu_documents.bind_links(
             links=(
-                link_document_list_recent, link_document_list,
-                link_document_list_deleted, link_duplicated_document_list
+                link_document_list,
+                link_document_list_deleted
             )
         )
 
         menu_main.bind_links(links=(menu_documents,), position=0)
 
         menu_setup.bind_links(links=(link_document_type_setup,))
-        menu_tools.bind_links(
-            links=(link_clear_image_cache, link_duplicated_document_scan)
-        )
 
         # Document type links
         menu_object.bind_links(
@@ -423,7 +420,7 @@ class DocumentsApp(MayanAppConfig):
 
         # Document facet links
         menu_facet.bind_links(
-            links=(link_document_duplicates_list, link_acl_list_with_icon,),
+            links=(link_acl_list_with_icon,),
             sources=(Document,)
         )
         menu_facet.bind_links(

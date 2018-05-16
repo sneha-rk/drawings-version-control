@@ -100,34 +100,3 @@ class MailerApp(MayanAppConfig):
             }
         )
 
-        menu_multi_item.bind_links(
-            links=(
-                link_send_multiple_document, link_send_multiple_document_link
-            ), sources=(Document,)
-        )
-
-        menu_object.bind_links(
-            links=(
-                link_send_document_link, link_send_document
-            ), sources=(Document,)
-        )
-
-        menu_object.bind_links(
-            links=(
-                link_user_mailer_edit, link_user_mailer_log_list,
-                link_user_mailer_test, link_acl_list, link_user_mailer_delete,
-            ), sources=(UserMailer,)
-        )
-
-        menu_secondary.bind_links(
-            links=(
-                link_user_mailer_list, link_user_mailer_create,
-            ), sources=(
-                UserMailer, 'mailer:user_mailer_list',
-                'mailer:user_mailer_create'
-            )
-        )
-
-        menu_tools.bind_links(links=(link_system_mailer_error_log,))
-
-        menu_setup.bind_links(links=(link_user_mailer_setup,))
